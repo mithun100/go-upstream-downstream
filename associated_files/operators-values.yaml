@@ -1,0 +1,44 @@
+global:
+  clusterName: XXXXX
+fso-agent-mgmt-client:
+  solution:
+    endpoint: XXXXX
+  oauth:
+    clientId: XXXXX
+    clientSecret: XXXXX
+    tokenUrl: XXXXX
+    tenantId: XXXXX
+
+#### We are using specific version of Go autoinstrumentation.v0.2.2-alpha
+#### Since Go is in Alpha currrently we need to enable it by featureGates: "operator.autoinstrumentation.go"
+opentelemetry-operator:
+  nodeSelector:
+    kubernetes.io/os: linux
+  manager:
+    image:
+      repository: ghcr.io/open-telemetry/opentelemetry-operator/opentelemetry-operator
+      tag: 0.83.0
+      # tag: latest
+    collectorImage:
+      repository: otel/opentelemetry-collector-contrib
+      tag: 0.83.0
+      # tag: latest
+    serviceAccount:
+      name: opentelemetry-operator
+    featureGates: "operator.autoinstrumentation.go"
+    autoInstrumentationImage:
+      java:
+        repository: ""
+        tag: ""
+      nodejs:
+        repository: ""
+        tag: ""
+      python:
+        repository: ""
+        tag: ""
+      dotnet:
+        repository: ""
+        tag: ""
+      go:
+        repository: ghcr.io/open-telemetry/opentelemetry-go-instrumentation/autoinstrumentation-go
+        tag: v0.2.2-alpha
