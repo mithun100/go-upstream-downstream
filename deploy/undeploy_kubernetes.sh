@@ -11,8 +11,8 @@ kubectl delete -f downstream-deployment.yaml
 kubectl delete -f downstream-service.yaml
 
 # #Undeploy loadgen job
-echo "Undeploying loadgen job"
-kubectl delete -f loadgen-job.yaml
+#echo "Undeploying loadgen job"
+#kubectl delete -f loadgen-job.yaml
 
 
 echo "Undeployment completed!"
