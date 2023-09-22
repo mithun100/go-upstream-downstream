@@ -58,6 +58,13 @@ Before getting started, ensure you have the following prerequisites installed:
   ```  featureGates: "operator.autoinstrumentation.go"```
 
 - Delete the auto-instrumentation  from the Kubernetes if already present and apply this   [instrumentation.yml](associated_files/instrumentation.yaml)
+  ```
+   kubectl delete otelinst auto-instrumentation
+
+   kubectl create -f instrumentation.yaml
+
+  ```
+  
 - Use the below command to deploy the application
 
   ```
