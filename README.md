@@ -28,11 +28,11 @@ Before getting started, ensure you have the following prerequisites installed:
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 ## Assumptions
-- Application is reported to the [AppDynamics Cloud Native Application Observability](https://docs.appdynamics.com/fso/cloud-native-app-obs/en)
-- This assumes you already have the collector deployed in your Kubernetes cluster
-- Go is in Alpha build so that things might change and break. So please use caution and do a proper testing before moving to a higher environment like Pre Prod and Production.
-- [instrumentation.yml](associated_files/instrumentation.yaml) files points to OTEL_EXPORTER_OTLP_ENDPOINT you might need to change it as per your application or endpoint details.
-- 
+- Your want to integrate your application with[AppDynamics Cloud Native Application Observability](https://docs.appdynamics.com/fso/cloud-native-app-obs/en)
+- You have already deployed the collector within your Kubernetes cluster.
+- Be aware that the Go application is in an Alpha build, which means that changes and disruptions may occur. Therefore, it is advisable to exercise caution and conduct thorough testing before considering deployment to higher environments such as Pre Prod and Production.
+- Ensure that the [instrumentation.yml](associated_files/instrumentation.yaml)  is configured to point to the 'OTEL_EXPORTER_OTLP_ENDPOINT.' You may need to adjust this setting according to your specific application or endpoint requirements.
+
 
 ## Steps to deploy
 - Be connected to the Kubernetes using CLI
