@@ -47,12 +47,14 @@ Before getting started, ensure you have the following prerequisites installed:
 - Uninstall the Kubernetes Operator and reploy deploy with modified files 
 - Navigate to the deploy folder and use ./deploy_kubernetes.sh (It is using image from mithun100 github repository using all the Kubernetes manifest files)
 - Key element to remember is the both the deployment files. This will enable the auto-instrumentation of the Go application
-  ```      annotations:
+- 
+  ```
+  annotations:
         instrumentation.opentelemetry.io/inject-go: "default/auto-instrumentation" 
         instrumentation.opentelemetry.io/otel-go-auto-target-exe: '/root/downstream-app'
-
   ```
 - Since Go is in Alpha release, we have to explictly enable it by using the featureGate
+- 
   ```  featureGates: "operator.autoinstrumentation.go"``` 
   
 
