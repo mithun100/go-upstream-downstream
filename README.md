@@ -45,7 +45,15 @@ Before getting started, ensure you have the following prerequisites installed:
 
 ## Steps to deploy
 - Be connected to the Kubernetes using CLI
-- Uninstall the Kubernetes Operator and reploy deploy with modified files 
+- Uninstall the Kubernetes Operator and reploy deploy with modified files [operators-values.yaml](associated_files/operators-values.yaml)
+   ```
+   helm uninstall appdynamics-operators -n appdynamics
+   helm install appdynamics-operators appdynamics-cloud-helmcharts/appdynamics-operators -n appdynamics -f operators-values.yaml --wait
+
+  ```
+
+  ![image](https://github.com/mithun100/go-upstream-downstream/assets/8347981/cb132cc2-51bd-4521-8c90-fcb34697ef34)
+
 - Navigate to the deploy folder and use ./deploy_kubernetes.sh (It is using image from mithun100 github repository using all the Kubernetes manifest files)
 - Key element to remember is the both the deployment files. This will enable the auto-instrumentation of the Go application
 - 
