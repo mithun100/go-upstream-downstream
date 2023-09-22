@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-downstream-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-downstream-app
+  template:
+    metadata:
+      labels:
+        app: go-downstream-app
+      annotations:
+        instrumentation.opentelemetry.io/inject-go: "default/auto-instrumentation" 
+        instrumentation.opentelemetry.io/otel-go-auto-target-exe: '/root/downstream-app'  
+    spec:
+      containers:
+        - name: go-downstream-app
+          image: mithun100/go-downstream-app
+          ports:
+            - containerPort: 8080
+

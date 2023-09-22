@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: loadgen-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: loadgen-container
+          image: mithun100/loadgen-image:latest  # Update with your load generation script image
+          command: ["python", "loadgen.py"]
+      restartPolicy: Never
+  backoffLimit: 0
+

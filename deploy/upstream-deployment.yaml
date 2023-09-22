@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-upstream-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-upstream-app
+  template:
+    metadata:
+      labels:
+        app: go-upstream-app
+      annotations:
+        instrumentation.opentelemetry.io/inject-go: "default/auto-instrumentation" 
+        instrumentation.opentelemetry.io/otel-go-auto-target-exe: '/root/upstream-app'    
+    spec:
+      containers:
+        - name: go-upstream-container
+          image: mithun100/go-upstream-app:latest
+          ports:
+            - containerPort: 8080
