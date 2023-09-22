@@ -44,7 +44,7 @@ Before getting started, ensure you have the following prerequisites installed:
   ```
 
 
-- Navigate to the deploy folder and use ./deploy_kubernetes.sh (It is using image from mithun100 github repository using all the Kubernetes manifest files)
+- Navigate to the deploy folder and use [deploy_kubernetes.sh](deploy/deploy_kubernetes.sh) (It is using image from [mithun100](https://hub.docker.com/r/mithun100) Dockerhub repository using all the Kubernetes manifest files)
 - Key element to remember is the both the deployment files. This will enable the auto-instrumentation of the Go application
 - 
   ```
