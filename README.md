@@ -5,6 +5,7 @@
 - [Prerequisites](#prerequisites)
 - [Project Structure](#project-structure)
 - [Assumptions](#assumptions)
+- [Steps to deploy](#steps-to-deploy)
   - [Set Up Downstream App](#1-set-up-downstream-app)
   - [Set Up Upstream App](#2-set-up-upstream-app)
   - [Docker Compose Configuration](#3-docker-compose-configuration)
