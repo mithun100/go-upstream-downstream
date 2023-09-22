@@ -6,13 +6,6 @@
 - [Project Structure](#project-structure)
 - [Assumptions](#assumptions)
 - [Steps to deploy](#steps-to-deploy)
-  - [Set Up Downstream App](#1-set-up-downstream-app)
-  - [Set Up Upstream App](#2-set-up-upstream-app)
-  - [Docker Compose Configuration](#3-docker-compose-configuration)
-  - [Kubernetes Configuration](#4-kubernetes-configuration)
-  - [Deploy to Kubernetes](#5-deploy-to-kubernetes)
-  - [Testing](#6-testing)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
@@ -62,8 +55,22 @@ Before getting started, ensure you have the following prerequisites installed:
   ```
 - Since Go is in Alpha release, we have to explictly enable it by using the featureGate
 - 
-  ```  featureGates: "operator.autoinstrumentation.go"``` 
-  
+  ```  featureGates: "operator.autoinstrumentation.go"```
+
+- Delete the auto-instrumentation  from the Kubernetes if already present and apply this   [instrumentation.yml](associated_files/instrumentation.yaml)
+- Use the below command to deploy the application
+
+  ```
+  deploy/deploy_kubernetes.sh
+  ```
+- Access the upstream in a browser using the upstream application's external IP.
+
+   ```sh
+   kubectl get service go-upstream-service | awk '{print $4}'
+   ```
+
+   Visit `http://EXTERNAL_IP` in a web browser to access the upstream application.
+   
 ## License
 This project is licensed under the MIT License - see the  [LICENSE](LICENSE) file for details.
 
