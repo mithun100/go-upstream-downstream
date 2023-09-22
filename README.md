@@ -3,7 +3,6 @@
 **Table of Contents**
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Project Structure](#project-structure)
 - [Assumptions](#assumptions)
 - [Steps to deploy](#steps-to-deploy)
 - [License](#license)
